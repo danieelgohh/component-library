@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Badge component stlyes */
 
 .badge {
@@ -202,4 +207,175 @@
   font-size: 1rem;
   font-weight: 400;
   color: #6B7280;
+}
+
+/* Testimonial */
+
+.testimonial {
+  align-self: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 23em;
+  max-height: 34.5em;
+  background-color: #F9FAFB;
+  padding: 4.625em 1em 9.625em;
+}
+
+.testimonial-logo {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 2.5em;
+  width: 11.25em;
+  height: 2em;
+}
+
+.testimonial-details {
+  display: flex;
+  flex-direction: column;
+  color: #111827;
+}
+
+.testimonial.testimonial-img {
+  padding-top: 0;
+  background: linear-gradient(to bottom, white 20%, #2545B8 20%)
+}
+
+.img-container {
+  align-self: center;
+  min-width: 21.5em;
+  min-height: 12.875em;
+}
+
+.testimonial-potrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  border-radius: 0.75em;
+}
+
+.testimonial-text {
+  line-height: 1.5em;
+  font-weight: 500;
+  max-width: 32em;
+}
+
+.author-details-bg {
+  background-image: url("./components/testimonial/dot-pattern.png");
+  width: 12.625em;
+  height: 8.438em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.author-details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 0.813em 1em 4.625em;
+  bottom: 0;
+}
+
+.author-details-img {
+  margin: 1.5em 0 4em;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.author-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.white-text {
+  color: #FFFFFF;
+}
+
+.black-text {
+  color: #111827;
+}
+
+.quote-mark {
+  width: 2.727em;
+  height: 2.188em;
+  margin: 2em 0 1.5em;
+}
+
+@media(min-width: 768px) {
+  .testimonial-text {
+    text-align: center;
+  }
+
+  .white-text {
+    text-align: start;
+  }
+}
+
+@media(min-width: 960px) {
+  .testimonial.testimonial-img {
+    padding: 0;
+    background: linear-gradient(to bottom, white 10%, #2545B8 10% 90%, white 90%)
+  }
+
+  .img-container {
+    grid-area: ic;
+  }
+
+  .quote-mark {
+    grid-area: qm;
+    align-self: flex-end;
+  }
+
+  .testimonial-text {
+    grid-area: tt;
+  }
+
+  .author-details-img {
+    grid-area: ad;
+    align-self: flex-start;
+    margin: 0;
+  }
+
+  .testimonial-details-img {
+    display: grid;
+    grid-template:  10% repeat(3, 1fr) 10% / 2% 1fr 2em 2fr 2%;
+    grid-template-areas: 
+    ". ic . . ."
+    ". ic . qm ."
+    ". ic . tt ."
+    ". ic . ad ."
+    ". ic . . .";
+  }
+
+  .img-container {
+    width: 24em;
+    height: 29em;
+  }
+}
+
+@media(min-width: 1280px) {
+  .testimonial {
+    width: 100%;
+    padding: 4em 1.625em 4.667em;
+  }
+
+  .author-details {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.75em;
+    margin-top: 2em;
+  }
+
+  .author-details-bg {
+    background-image: url("./components/testimonial/dot-pattern.png");
+    width: 15.063em;
+    height: 18.625em;
+  }
 }
